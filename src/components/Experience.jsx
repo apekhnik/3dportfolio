@@ -25,15 +25,15 @@ export const Experience = () => {
     <>
       <OrbitControls />
       <Environment preset="sunset" />
-      <directionalLight
-				ref={light}
-        intensity={0.65}
-        castShadow
-        position={[-15, 10, 15]}
-        shadow-mapSize-width={2048}
-        shadow-mapSize-height={2048}
-        shadow-bias={-0.00005}
-      >
+        <directionalLightа
+            ref={light}
+            intensity={0.65}
+            castShadow
+            position={[-15, 10, 15]}
+            shadow-mapSize-width={2048}
+            shadow-mapSize-height={2048}
+            shadow-bias={-0.00005}
+        >
         <OrthographicCamera
           left={-22}
           right={15}
@@ -42,10 +42,10 @@ export const Experience = () => {
           ref={shadowCameraRef}
           attach={"shadow-camera"}
         />
-      </directionalLight>
+      </directionalLightа>
       <Physics debug>
-				<RigidBody type='fixed'>
-					<mesh 
+          <RigidBody type='fixed'>
+              <mesh
                 geometry={new THREE.BoxGeometry(10, 0.2, 10)} 
                 material={new THREE.MeshStandardMaterial({color: 'red'})}
                 scale={[4, 0.2, 4]}
