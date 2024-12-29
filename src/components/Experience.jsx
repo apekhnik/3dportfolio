@@ -4,10 +4,10 @@ import {
   OrthographicCamera
 } from "@react-three/drei"
 import { useFrame } from '@react-three/fiber'
-import { Physics, RigidBody } from '@react-three/rapier'
+import { Physics } from '@react-three/rapier'
 import { useRef } from "react"
-import * as THREE from 'three'
 import CharacterController from './CharacterController'
+import Map from './Map'
 
 export const Experience = () => {
   const shadowCameraRef = useRef();
@@ -44,14 +44,7 @@ export const Experience = () => {
         />
       </directionalLight>
       <Physics debug>
-				<RigidBody type='fixed'>
-					<mesh 
-                geometry={new THREE.BoxGeometry(10, 0.2, 10)} 
-                material={new THREE.MeshStandardMaterial({color: 'red'})}
-                scale={[4, 0.2, 4]}
-                receiveShadow
-            />
-				</RigidBody>
+          <Map/>
 					<CharacterController/>
       </Physics>
     </>

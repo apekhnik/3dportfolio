@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { RigidBody, useRapier } from '@react-three/rapier'
 import { useControls } from 'leva'
 import { useEffect, useRef, useState } from 'react'
-import { MathUtils, Vector3 } from "three"
+import { Vector3 } from "three"
 import { degToRad } from "three/src/math/MathUtils.js"
 import Character from './Character'
 
@@ -162,21 +162,21 @@ export const CharacterController = () => {
     }
 
     // CAMERA
-    container.current.rotation.y = MathUtils.lerp(
-      container.current.rotation.y,
-      rotationTarget.current,
-      0.1
-    );
+    // container.current.rotation.y = MathUtils.lerp(
+    //   container.current.rotation.y,
+    //   rotationTarget.current,
+    //   0.1
+    // );
 
-    cameraPosition.current.getWorldPosition(cameraWorldPosition.current);
-    camera.position.lerp(cameraWorldPosition.current, 0.1);
+    // cameraPosition.current.getWorldPosition(cameraWorldPosition.current);
+    // camera.position.lerp(cameraWorldPosition.current, 0.1);
 
-    if (cameraTarget.current) {
-      cameraTarget.current.getWorldPosition(cameraLookAtWorldPosition.current);
-      cameraLookAt.current.lerp(cameraLookAtWorldPosition.current, 0.1);
+    // if (cameraTarget.current) {
+    //   cameraTarget.current.getWorldPosition(cameraLookAtWorldPosition.current);
+    //   cameraLookAt.current.lerp(cameraLookAtWorldPosition.current, 0.1);
 
-      camera.lookAt(cameraLookAt.current);
-    }
+    //   camera.lookAt(cameraLookAt.current);
+    // }
   });
 
 
