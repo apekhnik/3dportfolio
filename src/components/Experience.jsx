@@ -45,7 +45,7 @@ export const Experience = () => {
       </directionalLight>
       <Physics debug>
           <Map/>
-					<CharacterController/>
+          <CharacterController/>
       </Physics>
     </>
   );
