@@ -3,7 +3,7 @@ import {
   OrbitControls,
   OrthographicCamera
 } from "@react-three/drei"
-import { useFrame } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'yar
 import { Physics } from '@react-three/rapier'
 import { useRef } from "react"
 import CharacterController from './CharacterController'

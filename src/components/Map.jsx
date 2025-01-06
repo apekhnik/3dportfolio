@@ -24,8 +24,8 @@ export const Map = () => {
         >
           <meshStandardMaterial
             color="#6F6F6F"
-            metalness={0.8} // Increase metalness (1 is maximum)
-            roughness={0.3} // Decrease roughness (0 is the smoothest)
+            metalness={0.8}
+            roughness={0.3}
           />
         </mesh>
       </RigidBody>
