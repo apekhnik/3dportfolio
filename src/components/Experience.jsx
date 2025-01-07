@@ -1,32 +1,31 @@
 import {
   Environment,
   OrbitControls,
-  OrthographicCamera
-} from "@react-three/drei"
-import { useFrame } from '@react-three/fiber'yar
-import { Physics } from '@react-three/rapier'
-import { useRef } from "react"
-import CharacterController from './CharacterController'
-import Map from './Map'
+  OrthographicCamera,
+} from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { Physics } from "@react-three/rapier";
+import { useRef } from "react";
+import CharacterController from "./CharacterController";
+import Map from "./Map";
 
 export const Experience = () => {
   const shadowCameraRef = useRef();
 
+  const light = useRef();
 
-	const light = useRef();
-
-    useFrame((state) => {
-        light.current.position.z = state.camera.position.z + 1 - 4;
-        light.current.target.position.z = state.camera.position.z - 4;
-        light.current.target.updateMatrixWorld();
-    })
+  useFrame((state) => {
+    light.current.position.z = state.camera.position.z + 1 - 4;
+    light.current.target.position.z = state.camera.position.z - 4;
+    light.current.target.updateMatrixWorld();
+  });
 
   return (
     <>
       <OrbitControls />
       <Environment preset="sunset" />
       <directionalLight
-				ref={light}
+        ref={light}
         intensity={0.65}
         castShadow
         position={[-15, 10, 15]}
@@ -44,8 +43,8 @@ export const Experience = () => {
         />
       </directionalLight>
       <Physics debug>
-          <Map/>
-          <CharacterController/>
+        <Map />
+        <CharacterController />
       </Physics>
     </>
   );
